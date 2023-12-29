@@ -1,0 +1,6 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/bookingongoing_item_model.dart';import 'package:hotelapp/presentation/booking_ongoing_page/models/booking_ongoing_model.dart';part 'booking_ongoing_event.dart';part 'booking_ongoing_state.dart';/// A bloc that manages the state of a BookingOngoing according to the event that is dispatched to it.
+class BookingOngoingBloc extends Bloc<BookingOngoingEvent, BookingOngoingState> {BookingOngoingBloc(BookingOngoingState initialState) : super(initialState) { on<BookingOngoingInitialEvent>(_onInitialize); }
+
+_onInitialize(BookingOngoingInitialEvent event, Emitter<BookingOngoingState> emit, ) async  { emit(state.copyWith(bookingOngoingModelObj: state.bookingOngoingModelObj?.copyWith(bookingongoingItemList: fillBookingongoingItemList()))); } 
+List<BookingongoingItemModel> fillBookingongoingItemList() { return [BookingongoingItemModel(image: ImageConstant.imgRectangle4100x100, royalePresident: "Royale President Hotel", parisFrance: "Paris, France"), BookingongoingItemModel(image: ImageConstant.imgRectangle, royalePresident: "Monte-Carlo Hotel", parisFrance: "Rome, Italia")]; } 
+ }
