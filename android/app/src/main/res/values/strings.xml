@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">hotelapp</string>
+    <!--TODO: Replace "000000000000" with your Facebook App ID here-->
+    <string name="facebook_app_id">000000000000</string>
+    <!--TODO: Replace "YOUR_CLIENT_ACCESS_TOKEN" with your client access token here-->
+    <string name="facebook_client_token">YOUR_CLIENT_ACCESS_TOKEN</string>
+</resources>
