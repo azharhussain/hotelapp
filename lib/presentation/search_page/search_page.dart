@@ -1,7 +1,7 @@
-import '../search_page/widgets/searchpagelist_item_widget.dart';
+import '../search_page/widgets/searchpage_item_widget.dart';
 import 'bloc/search_bloc.dart';
 import 'models/search_model.dart';
-import 'models/searchpagelist_item_model.dart';
+import 'models/searchpage_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hotelapp/core/app_export.dart';
 
@@ -45,9 +45,9 @@ class SearchPageState extends State<SearchPage>
                 padding: EdgeInsets.symmetric(horizontal: 24.h),
                 child: Column(
                   children: [
-                    _buildSeventyTwoRow(context),
+                    _buildSeventyTwo(context),
                     SizedBox(height: 22.v),
-                    _buildSearchPageList(context),
+                    _buildSearchPage(context),
                   ],
                 ),
               ),
@@ -59,7 +59,7 @@ class SearchPageState extends State<SearchPage>
   }
 
   /// Section Widget
-  Widget _buildRecommendedText(BuildContext context) {
+  Widget _buildRecommended(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
         top: 2.v,
@@ -73,11 +73,11 @@ class SearchPageState extends State<SearchPage>
   }
 
   /// Section Widget
-  Widget _buildSeventyTwoRow(BuildContext context) {
+  Widget _buildSeventyTwo(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _buildRecommendedText(context),
+        _buildRecommended(context),
         Spacer(),
         CustomImageView(
           imagePath: ImageConstant.imgMenuPrimary,
@@ -95,7 +95,7 @@ class SearchPageState extends State<SearchPage>
   }
 
   /// Section Widget
-  Widget _buildSearchPageList(BuildContext context) {
+  Widget _buildSearchPage(BuildContext context) {
     return BlocSelector<SearchBloc, SearchState, SearchModel?>(
       selector: (state) => state.searchModelObj,
       builder: (context, searchModelObj) {
@@ -110,12 +110,12 @@ class SearchPageState extends State<SearchPage>
               height: 24.v,
             );
           },
-          itemCount: searchModelObj?.searchpagelistItemList.length ?? 0,
+          itemCount: searchModelObj?.searchpageItemList.length ?? 0,
           itemBuilder: (context, index) {
-            SearchpagelistItemModel model =
-                searchModelObj?.searchpagelistItemList[index] ??
-                    SearchpagelistItemModel();
-            return SearchpagelistItemWidget(
+            SearchpageItemModel model =
+                searchModelObj?.searchpageItemList[index] ??
+                    SearchpageItemModel();
+            return SearchpageItemWidget(
               model,
             );
           },

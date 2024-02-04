@@ -1,7 +1,7 @@
-import '../booking_completed_page/widgets/bookingcompletedlist_item_widget.dart';
+import '../booking_completed_page/widgets/bookingcompleted_item_widget.dart';
 import 'bloc/booking_completed_bloc.dart';
 import 'models/booking_completed_model.dart';
-import 'models/bookingcompletedlist_item_model.dart';
+import 'models/bookingcompleted_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hotelapp/core/app_export.dart';
 
@@ -41,7 +41,7 @@ class BookingCompletedPageState extends State<BookingCompletedPage>
           child: Column(
             children: [
               SizedBox(height: 30.v),
-              _buildBookingCompletedList(context),
+              _buildBookingCompleted(context),
             ],
           ),
         ),
@@ -50,7 +50,7 @@ class BookingCompletedPageState extends State<BookingCompletedPage>
   }
 
   /// Section Widget
-  Widget _buildBookingCompletedList(BuildContext context) {
+  Widget _buildBookingCompleted(BuildContext context) {
     return Expanded(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.h),
@@ -69,14 +69,14 @@ class BookingCompletedPageState extends State<BookingCompletedPage>
                   height: 20.v,
                 );
               },
-              itemCount: bookingCompletedModelObj
-                      ?.bookingcompletedlistItemList.length ??
-                  0,
+              itemCount:
+                  bookingCompletedModelObj?.bookingcompletedItemList.length ??
+                      0,
               itemBuilder: (context, index) {
-                BookingcompletedlistItemModel model = bookingCompletedModelObj
-                        ?.bookingcompletedlistItemList[index] ??
-                    BookingcompletedlistItemModel();
-                return BookingcompletedlistItemWidget(
+                BookingcompletedItemModel model =
+                    bookingCompletedModelObj?.bookingcompletedItemList[index] ??
+                        BookingcompletedItemModel();
+                return BookingcompletedItemWidget(
                   model,
                 );
               },

@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import '/core/app_export.dart';
-import '../models/searchpagelist_item_model.dart';
+import '../models/searchpage_item_model.dart';
 import 'package:hotelapp/presentation/search_page/models/search_model.dart';
 part 'search_event.dart';
 part 'search_state.dart';
@@ -18,13 +18,13 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
   ) async {
     emit(state.copyWith(
         searchModelObj: state.searchModelObj?.copyWith(
-      searchpagelistItemList: fillSearchpagelistItemList(),
+      searchpageItemList: fillSearchpageItemList(),
     )));
   }
 
-  List<SearchpagelistItemModel> fillSearchpagelistItemList() {
+  List<SearchpageItemModel> fillSearchpageItemList() {
     return [
-      SearchpagelistItemModel(
+      SearchpageItemModel(
           presidentHotel: ImageConstant.imgRectangle4100x100,
           presidentHotel1: "President Hotel",
           parisFrance: "Paris, France",
@@ -32,7 +32,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
           reviews: "(4,378 reviews)",
           price: "35",
           night: "/ night"),
-      SearchpagelistItemModel(
+      SearchpageItemModel(
           presidentHotel: ImageConstant.imgRectangle41,
           presidentHotel1: "Palms Casino",
           parisFrance: "Paris, France",
@@ -40,7 +40,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
           reviews: "(4,378 reviews)",
           price: "29",
           night: "/ night"),
-      SearchpagelistItemModel(
+      SearchpageItemModel(
           presidentHotel: ImageConstant.imgRectangle43,
           presidentHotel1: "Bulgari Resort",
           parisFrance: "Paris, France",

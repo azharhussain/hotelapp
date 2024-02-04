@@ -41,7 +41,7 @@ class FilterResultPageState extends State<FilterResultPage>
           child: Column(
             children: [
               SizedBox(height: 24.v),
-              _buildRecommendedSection(context),
+              _buildRecommended(context),
             ],
           ),
         ),
@@ -50,7 +50,7 @@ class FilterResultPageState extends State<FilterResultPage>
   }
 
   /// Section Widget
-  Widget _buildRecommendedSection(BuildContext context) {
+  Widget _buildRecommended(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.h),
       child: Column(

@@ -9,17 +9,17 @@ class BookingongoingItemWidget extends StatelessWidget {
   BookingongoingItemWidget(
     this.bookingongoingItemModelObj, {
     Key? key,
-    this.onTapBookingActionCancelBookingButton,
-    this.onTapBookingActionViewTicketButton,
+    this.onTapCancelBooking,
+    this.onTapViewTicket,
   }) : super(
           key: key,
         );
 
   BookingongoingItemModel bookingongoingItemModelObj;
 
-  VoidCallback? onTapBookingActionCancelBookingButton;
+  VoidCallback? onTapCancelBooking;
 
-  VoidCallback? onTapBookingActionViewTicketButton;
+  VoidCallback? onTapViewTicket;
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +86,7 @@ class BookingongoingItemWidget extends StatelessWidget {
                   text: "lbl_cancel_booking".tr,
                   margin: EdgeInsets.only(right: 6.h),
                   onPressed: () {
-                    onTapBookingActionCancelBookingButton!.call();
+                    onTapCancelBooking!.call();
                   },
                 ),
               ),
@@ -98,7 +98,7 @@ class BookingongoingItemWidget extends StatelessWidget {
                   buttonStyle: CustomButtonStyles.fillPrimaryTL19,
                   buttonTextStyle: CustomTextStyles.titleMediumSemiBold,
                   onPressed: () {
-                    onTapBookingActionViewTicketButton!.call();
+                    onTapViewTicket!.call();
                   },
                 ),
               ),

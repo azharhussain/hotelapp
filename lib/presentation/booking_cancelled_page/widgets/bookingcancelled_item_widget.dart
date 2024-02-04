@@ -1,18 +1,18 @@
-import '../models/bookingcompletedlist_item_model.dart';
+import '../models/bookingcancelled_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hotelapp/core/app_export.dart';
 import 'package:hotelapp/widgets/custom_elevated_button.dart';
 
 // ignore: must_be_immutable
-class BookingcompletedlistItemWidget extends StatelessWidget {
-  BookingcompletedlistItemWidget(
-    this.bookingcompletedlistItemModelObj, {
+class BookingcancelledItemWidget extends StatelessWidget {
+  BookingcancelledItemWidget(
+    this.bookingcancelledItemModelObj, {
     Key? key,
   }) : super(
           key: key,
         );
 
-  BookingcompletedlistItemModel bookingcompletedlistItemModelObj;
+  BookingcancelledItemModel bookingcancelledItemModelObj;
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +26,11 @@ class BookingcompletedlistItemWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(right: 89.h),
+            padding: EdgeInsets.only(right: 43.h),
             child: Row(
               children: [
                 CustomImageView(
-                  imagePath: bookingcompletedlistItemModelObj?.bulgariResort,
+                  imagePath: bookingcancelledItemModelObj?.palmsCasinoResort,
                   height: 100.adaptSize,
                   width: 100.adaptSize,
                   radius: BorderRadius.circular(
@@ -40,28 +40,28 @@ class BookingcompletedlistItemWidget extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(
                     left: 16.h,
-                    top: 5.v,
+                    top: 6.v,
                     bottom: 6.v,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        bookingcompletedlistItemModelObj.bulgariResort1!,
-                        style: CustomTextStyles.titleLargeSemiBold,
+                        bookingcancelledItemModelObj.palmsCasinoResort1!,
+                        style: CustomTextStyles.titleLarge20,
                       ),
-                      SizedBox(height: 9.v),
+                      SizedBox(height: 13.v),
                       Text(
-                        bookingcompletedlistItemModelObj.parisFrance!,
+                        bookingcancelledItemModelObj.londonUnitedKingdom!,
                         style: theme.textTheme.bodyMedium,
                       ),
-                      SizedBox(height: 11.v),
+                      SizedBox(height: 10.v),
                       CustomElevatedButton(
                         height: 24.v,
-                        width: 72.h,
-                        text: "lbl_completed".tr,
-                        buttonStyle: CustomButtonStyles.fillTeal,
-                        buttonTextStyle: CustomTextStyles.labelMediumCyan300,
+                        width: 60.h,
+                        text: "lbl_paid".tr,
+                        buttonStyle: CustomButtonStyles.fillRed,
+                        buttonTextStyle: CustomTextStyles.labelMediumRed400,
                       ),
                     ],
                   ),
@@ -77,13 +77,13 @@ class BookingcompletedlistItemWidget extends StatelessWidget {
               horizontal: 12.h,
               vertical: 8.v,
             ),
-            decoration: AppDecoration.fillGreen.copyWith(
+            decoration: AppDecoration.fillRed.copyWith(
               borderRadius: BorderRadiusStyle.roundedBorder12,
             ),
             child: Row(
               children: [
                 CustomImageView(
-                  imagePath: ImageConstant.imgCheckmarkPrimary18x18,
+                  imagePath: ImageConstant.imgWarning,
                   height: 18.adaptSize,
                   width: 18.adaptSize,
                 ),
@@ -93,8 +93,8 @@ class BookingcompletedlistItemWidget extends StatelessWidget {
                     top: 5.v,
                   ),
                   child: Text(
-                    bookingcompletedlistItemModelObj.yeayyouhavecompletedit!,
-                    style: CustomTextStyles.labelMediumCyan200,
+                    bookingcancelledItemModelObj.youCanceledThis!,
+                    style: CustomTextStyles.labelMediumRed400_1,
                   ),
                 ),
               ],

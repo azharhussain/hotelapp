@@ -12,7 +12,7 @@ List<SelectionPopupModel> fillDropdownItemList1() { return [SelectionPopupModel(
 /// Calls the https://nodedemo.dhiwise.co/device/api/v1/user/me API and triggers a [FetchMeEvent] event on the [EditProfileBloc] bloc.
 ///
 /// The [BuildContext] parameter represents current [BuildContext]
-_onInitialize(EditProfileInitialEvent event, Emitter<EditProfileState> emit, ) async  { emit(state.copyWith(editProfileLabel1Controller: TextEditingController(), editProfileLabel2Controller: TextEditingController(), editProfileDateController: TextEditingController(), editProfileEmailController: TextEditingController(), editProfileFolderController: TextEditingController())); emit(state.copyWith(editProfileModelObj: state.editProfileModelObj?.copyWith(dropdownItemList: fillDropdownItemList(), dropdownItemList1: fillDropdownItemList1())));
+_onInitialize(EditProfileInitialEvent event, Emitter<EditProfileState> emit, ) async  { emit(state.copyWith(labelController: TextEditingController(), labelController1: TextEditingController(), dateController: TextEditingController(), emailController: TextEditingController(), folderController: TextEditingController())); emit(state.copyWith(editProfileModelObj: state.editProfileModelObj?.copyWith(dropdownItemList: fillDropdownItemList(), dropdownItemList1: fillDropdownItemList1())));
 add(FetchMeEvent(onFetchMeEventError: () {
 
 _onFetchMeEventError();
@@ -40,9 +40,9 @@ event.onFetchMeEventError?.call();
 })
 ; } 
 void _onFetchMeSuccess(GetMeResp resp, Emitter<EditProfileState> emit, ) { 
-emit(state.copyWith(editProfileModelObj: state.editProfileModelObj?.copyWith(),editProfileLabel2Controller : TextEditingController(text: resp.data!.username! ?? ''),
-editProfileEmailController : TextEditingController(text: resp.data!.email! ?? ''),
-editProfileLabel1Controller : TextEditingController(text: resp.data!.name! ?? ''),
+emit(state.copyWith(editProfileModelObj: state.editProfileModelObj?.copyWith(labelController1 : resp.data?.username ?? '',
+),emailController : TextEditingController(text: resp.data!.email! ?? ''),
+labelController : TextEditingController(text: resp.data!.name! ?? ''),
 ),); } 
 void _onFetchMeError() { 
  //implement error method body...

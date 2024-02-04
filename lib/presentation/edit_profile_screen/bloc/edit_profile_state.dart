@@ -5,25 +5,25 @@ part of 'edit_profile_bloc.dart';
 /// Represents the state of EditProfile in the application.
 class EditProfileState extends Equatable {
   EditProfileState({
-    this.editProfileLabel1Controller,
-    this.editProfileLabel2Controller,
-    this.editProfileDateController,
-    this.editProfileEmailController,
-    this.editProfileFolderController,
+    this.labelController,
+    this.labelController1,
+    this.dateController,
+    this.emailController,
+    this.folderController,
     this.selectedDropDownValue,
     this.selectedDropDownValue1,
     this.editProfileModelObj,
   });
 
-  TextEditingController? editProfileLabel1Controller;
+  TextEditingController? labelController;
 
-  TextEditingController? editProfileLabel2Controller;
+  TextEditingController? labelController1;
 
-  TextEditingController? editProfileDateController;
+  TextEditingController? dateController;
 
-  TextEditingController? editProfileEmailController;
+  TextEditingController? emailController;
 
-  TextEditingController? editProfileFolderController;
+  TextEditingController? folderController;
 
   SelectionPopupModel? selectedDropDownValue;
 
@@ -33,36 +33,31 @@ class EditProfileState extends Equatable {
 
   @override
   List<Object?> get props => [
-        editProfileLabel1Controller,
-        editProfileLabel2Controller,
-        editProfileDateController,
-        editProfileEmailController,
-        editProfileFolderController,
+        labelController,
+        labelController1,
+        dateController,
+        emailController,
+        folderController,
         selectedDropDownValue,
         selectedDropDownValue1,
         editProfileModelObj,
       ];
   EditProfileState copyWith({
-    TextEditingController? editProfileLabel1Controller,
-    TextEditingController? editProfileLabel2Controller,
-    TextEditingController? editProfileDateController,
-    TextEditingController? editProfileEmailController,
-    TextEditingController? editProfileFolderController,
+    TextEditingController? labelController,
+    TextEditingController? labelController1,
+    TextEditingController? dateController,
+    TextEditingController? emailController,
+    TextEditingController? folderController,
     SelectionPopupModel? selectedDropDownValue,
     SelectionPopupModel? selectedDropDownValue1,
     EditProfileModel? editProfileModelObj,
   }) {
     return EditProfileState(
-      editProfileLabel1Controller:
-          editProfileLabel1Controller ?? this.editProfileLabel1Controller,
-      editProfileLabel2Controller:
-          editProfileLabel2Controller ?? this.editProfileLabel2Controller,
-      editProfileDateController:
-          editProfileDateController ?? this.editProfileDateController,
-      editProfileEmailController:
-          editProfileEmailController ?? this.editProfileEmailController,
-      editProfileFolderController:
-          editProfileFolderController ?? this.editProfileFolderController,
+      labelController: labelController ?? this.labelController,
+      labelController1: labelController1 ?? this.labelController1,
+      dateController: dateController ?? this.dateController,
+      emailController: emailController ?? this.emailController,
+      folderController: folderController ?? this.folderController,
       selectedDropDownValue:
           selectedDropDownValue ?? this.selectedDropDownValue,
       selectedDropDownValue1:

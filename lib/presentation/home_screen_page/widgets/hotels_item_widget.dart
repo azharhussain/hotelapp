@@ -1,18 +1,18 @@
-import '../models/hotelslist_item_model.dart';
+import '../models/hotels_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hotelapp/core/app_export.dart';
 import 'package:hotelapp/widgets/custom_elevated_button.dart';
 
 // ignore: must_be_immutable
-class HotelslistItemWidget extends StatelessWidget {
-  HotelslistItemWidget(
-    this.hotelslistItemModelObj, {
+class HotelsItemWidget extends StatelessWidget {
+  HotelsItemWidget(
+    this.hotelsItemModelObj, {
     Key? key,
   }) : super(
           key: key,
         );
 
-  HotelslistItemModel hotelslistItemModelObj;
+  HotelsItemModel hotelsItemModelObj;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class HotelslistItemWidget extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           CustomImageView(
-            imagePath: hotelslistItemModelObj?.image,
+            imagePath: hotelsItemModelObj?.image,
             height: 400.v,
             width: 300.h,
             radius: BorderRadius.circular(
@@ -69,12 +69,12 @@ class HotelslistItemWidget extends StatelessWidget {
                     children: [
                       SizedBox(height: 16.v),
                       Text(
-                        hotelslistItemModelObj.emeraldaDeHotel!,
+                        hotelsItemModelObj.emeraldaDeHotel!,
                         style: theme.textTheme.headlineSmall,
                       ),
                       SizedBox(height: 15.v),
                       Text(
-                        hotelslistItemModelObj.parisFrance!,
+                        hotelsItemModelObj.parisFrance!,
                         style: theme.textTheme.bodyLarge,
                       ),
                       SizedBox(height: 10.v),
@@ -84,7 +84,7 @@ class HotelslistItemWidget extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.only(top: 2.v),
                             child: Text(
-                              hotelslistItemModelObj.price!,
+                              hotelsItemModelObj.price!,
                               style: theme.textTheme.headlineSmall,
                             ),
                           ),
@@ -95,7 +95,7 @@ class HotelslistItemWidget extends StatelessWidget {
                               bottom: 5.v,
                             ),
                             child: Text(
-                              hotelslistItemModelObj.perNight!,
+                              hotelsItemModelObj.perNight!,
                               style: CustomTextStyles.bodyMediumWhiteA700,
                             ),
                           ),

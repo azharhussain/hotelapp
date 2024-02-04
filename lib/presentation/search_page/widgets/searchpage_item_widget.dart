@@ -1,49 +1,55 @@
-import '../models/recentlybookedlist_item_model.dart';
-import 'package:flutter/material.dart';
+import '../models/searchpage_item_model.dart';
+import 'package:flutter/material.dart' hide SearchController;
 import 'package:hotelapp/core/app_export.dart';
 
 // ignore: must_be_immutable
-class RecentlybookedlistItemWidget extends StatelessWidget {
-  RecentlybookedlistItemWidget(
-    this.recentlybookedlistItemModelObj, {
+class SearchpageItemWidget extends StatelessWidget {
+  SearchpageItemWidget(
+    this.searchpageItemModelObj, {
     Key? key,
   }) : super(
           key: key,
         );
 
-  RecentlybookedlistItemModel recentlybookedlistItemModelObj;
+  SearchpageItemModel searchpageItemModelObj;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 18.v),
+      padding: EdgeInsets.symmetric(
+        horizontal: 20.h,
+        vertical: 18.v,
+      ),
       decoration: AppDecoration.outlineBlackC.copyWith(
         borderRadius: BorderRadiusStyle.roundedBorder16,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomImageView(
-            imagePath: recentlybookedlistItemModelObj?.martinezCannes,
+            imagePath: searchpageItemModelObj?.presidentHotel,
             height: 100.adaptSize,
             width: 100.adaptSize,
             radius: BorderRadius.circular(
               16.h,
             ),
-            margin: EdgeInsets.symmetric(vertical: 1.v),
+            margin: EdgeInsets.only(bottom: 1.v),
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: 10.v),
+            padding: EdgeInsets.only(
+              left: 16.h,
+              bottom: 11.v,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  recentlybookedlistItemModelObj.presidentHotel!,
+                  searchpageItemModelObj.presidentHotel1!,
                   style: theme.textTheme.titleLarge,
                 ),
                 SizedBox(height: 18.v),
                 Text(
-                  recentlybookedlistItemModelObj.parisFrance!,
+                  searchpageItemModelObj.parisFrance!,
                   style: theme.textTheme.bodyMedium,
                 ),
                 SizedBox(height: 12.v),
@@ -58,7 +64,7 @@ class RecentlybookedlistItemWidget extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 4.h),
                       child: Text(
-                        recentlybookedlistItemModelObj.fortyEight!,
+                        searchpageItemModelObj.fortyEight!,
                         style: theme.textTheme.titleSmall,
                       ),
                     ),
@@ -68,7 +74,7 @@ class RecentlybookedlistItemWidget extends StatelessWidget {
                         top: 1.v,
                       ),
                       child: Text(
-                        recentlybookedlistItemModelObj.reviews!,
+                        searchpageItemModelObj.reviews!,
                         style: theme.textTheme.bodySmall,
                       ),
                     ),
@@ -77,21 +83,22 @@ class RecentlybookedlistItemWidget extends StatelessWidget {
               ],
             ),
           ),
+          Spacer(),
           Padding(
             padding: EdgeInsets.only(
               top: 10.v,
-              bottom: 7.v,
+              bottom: 8.v,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  recentlybookedlistItemModelObj.price!,
+                  searchpageItemModelObj.price!,
                   style: CustomTextStyles.headlineSmallPrimary,
                 ),
                 SizedBox(height: 2.v),
                 Text(
-                  recentlybookedlistItemModelObj.night!,
+                  searchpageItemModelObj.night!,
                   style: theme.textTheme.labelMedium,
                 ),
                 SizedBox(height: 16.v),

@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import '/core/app_export.dart';
-import '../models/bookingcompletedlist_item_model.dart';
+import '../models/bookingcompleted_item_model.dart';
 import 'package:hotelapp/presentation/booking_completed_page/models/booking_completed_model.dart';
 part 'booking_completed_event.dart';
 part 'booking_completed_state.dart';
@@ -20,18 +20,18 @@ class BookingCompletedBloc
   ) async {
     emit(state.copyWith(
         bookingCompletedModelObj: state.bookingCompletedModelObj?.copyWith(
-      bookingcompletedlistItemList: fillBookingcompletedlistItemList(),
+      bookingcompletedItemList: fillBookingcompletedItemList(),
     )));
   }
 
-  List<BookingcompletedlistItemModel> fillBookingcompletedlistItemList() {
+  List<BookingcompletedItemModel> fillBookingcompletedItemList() {
     return [
-      BookingcompletedlistItemModel(
+      BookingcompletedItemModel(
           bulgariResort: ImageConstant.imgRectangle4100x100,
           bulgariResort1: "Bulgari Resort",
           parisFrance: "Paris, France",
           yeayyouhavecompletedit: "Yeay, you have completed it!"),
-      BookingcompletedlistItemModel(
+      BookingcompletedItemModel(
           bulgariResort: ImageConstant.imgRectangle,
           bulgariResort1: "Hotel Martinez Cannes",
           parisFrance: "Amsterdam, Netherlands",

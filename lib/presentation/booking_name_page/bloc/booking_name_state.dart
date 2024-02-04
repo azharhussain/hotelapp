@@ -5,54 +5,49 @@ part of 'booking_name_bloc.dart';
 /// Represents the state of BookingName in the application.
 class BookingNameState extends Equatable {
   BookingNameState({
-    this.editTextLabelController,
-    this.editTextLabelController1,
-    this.editTextDateController,
-    this.editTextEmailController,
-    this.editTextPhoneController,
+    this.labelController,
+    this.labelController1,
+    this.dateController,
+    this.emailController,
+    this.phoneController,
     this.bookingNameModelObj,
   });
 
-  TextEditingController? editTextLabelController;
+  TextEditingController? labelController;
 
-  TextEditingController? editTextLabelController1;
+  TextEditingController? labelController1;
 
-  TextEditingController? editTextDateController;
+  TextEditingController? dateController;
 
-  TextEditingController? editTextEmailController;
+  TextEditingController? emailController;
 
-  TextEditingController? editTextPhoneController;
+  TextEditingController? phoneController;
 
   BookingNameModel? bookingNameModelObj;
 
   @override
   List<Object?> get props => [
-        editTextLabelController,
-        editTextLabelController1,
-        editTextDateController,
-        editTextEmailController,
-        editTextPhoneController,
+        labelController,
+        labelController1,
+        dateController,
+        emailController,
+        phoneController,
         bookingNameModelObj,
       ];
   BookingNameState copyWith({
-    TextEditingController? editTextLabelController,
-    TextEditingController? editTextLabelController1,
-    TextEditingController? editTextDateController,
-    TextEditingController? editTextEmailController,
-    TextEditingController? editTextPhoneController,
+    TextEditingController? labelController,
+    TextEditingController? labelController1,
+    TextEditingController? dateController,
+    TextEditingController? emailController,
+    TextEditingController? phoneController,
     BookingNameModel? bookingNameModelObj,
   }) {
     return BookingNameState(
-      editTextLabelController:
-          editTextLabelController ?? this.editTextLabelController,
-      editTextLabelController1:
-          editTextLabelController1 ?? this.editTextLabelController1,
-      editTextDateController:
-          editTextDateController ?? this.editTextDateController,
-      editTextEmailController:
-          editTextEmailController ?? this.editTextEmailController,
-      editTextPhoneController:
-          editTextPhoneController ?? this.editTextPhoneController,
+      labelController: labelController ?? this.labelController,
+      labelController1: labelController1 ?? this.labelController1,
+      dateController: dateController ?? this.dateController,
+      emailController: emailController ?? this.emailController,
+      phoneController: phoneController ?? this.phoneController,
       bookingNameModelObj: bookingNameModelObj ?? this.bookingNameModelObj,
     );
   }

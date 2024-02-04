@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import '/core/app_export.dart';
-import '../models/bookingcancelledlist_item_model.dart';
+import '../models/bookingcancelled_item_model.dart';
 import 'package:hotelapp/presentation/booking_cancelled_page/models/booking_cancelled_model.dart';
 part 'booking_cancelled_event.dart';
 part 'booking_cancelled_state.dart';
@@ -20,18 +20,18 @@ class BookingCancelledBloc
   ) async {
     emit(state.copyWith(
         bookingCancelledModelObj: state.bookingCancelledModelObj?.copyWith(
-      bookingcancelledlistItemList: fillBookingcancelledlistItemList(),
+      bookingcancelledItemList: fillBookingcancelledItemList(),
     )));
   }
 
-  List<BookingcancelledlistItemModel> fillBookingcancelledlistItemList() {
+  List<BookingcancelledItemModel> fillBookingcancelledItemList() {
     return [
-      BookingcancelledlistItemModel(
+      BookingcancelledItemModel(
           palmsCasinoResort: ImageConstant.imgRectangle4100x100,
           palmsCasinoResort1: "Palms Casino Resort",
           londonUnitedKingdom: "London, United Kingdom",
           youCanceledThis: "You canceled this hotel booking"),
-      BookingcancelledlistItemModel(
+      BookingcancelledItemModel(
           palmsCasinoResort: ImageConstant.imgRectangle,
           palmsCasinoResort1: "The Mark Hotel",
           londonUnitedKingdom: "Luxemburg, Germany",

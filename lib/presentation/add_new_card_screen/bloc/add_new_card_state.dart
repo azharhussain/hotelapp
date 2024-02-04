@@ -5,47 +5,43 @@ part of 'add_new_card_bloc.dart';
 /// Represents the state of AddNewCard in the application.
 class AddNewCardState extends Equatable {
   AddNewCardState({
-    this.nameEditTextController,
-    this.numberEditTextController,
-    this.expiryDateEditTextController,
-    this.cvvEditTextController,
+    this.nameController,
+    this.numberController,
+    this.expiryDateController,
+    this.cvvController,
     this.addNewCardModelObj,
   });
 
-  TextEditingController? nameEditTextController;
+  TextEditingController? nameController;
 
-  TextEditingController? numberEditTextController;
+  TextEditingController? numberController;
 
-  TextEditingController? expiryDateEditTextController;
+  TextEditingController? expiryDateController;
 
-  TextEditingController? cvvEditTextController;
+  TextEditingController? cvvController;
 
   AddNewCardModel? addNewCardModelObj;
 
   @override
   List<Object?> get props => [
-        nameEditTextController,
-        numberEditTextController,
-        expiryDateEditTextController,
-        cvvEditTextController,
+        nameController,
+        numberController,
+        expiryDateController,
+        cvvController,
         addNewCardModelObj,
       ];
   AddNewCardState copyWith({
-    TextEditingController? nameEditTextController,
-    TextEditingController? numberEditTextController,
-    TextEditingController? expiryDateEditTextController,
-    TextEditingController? cvvEditTextController,
+    TextEditingController? nameController,
+    TextEditingController? numberController,
+    TextEditingController? expiryDateController,
+    TextEditingController? cvvController,
     AddNewCardModel? addNewCardModelObj,
   }) {
     return AddNewCardState(
-      nameEditTextController:
-          nameEditTextController ?? this.nameEditTextController,
-      numberEditTextController:
-          numberEditTextController ?? this.numberEditTextController,
-      expiryDateEditTextController:
-          expiryDateEditTextController ?? this.expiryDateEditTextController,
-      cvvEditTextController:
-          cvvEditTextController ?? this.cvvEditTextController,
+      nameController: nameController ?? this.nameController,
+      numberController: numberController ?? this.numberController,
+      expiryDateController: expiryDateController ?? this.expiryDateController,
+      cvvController: cvvController ?? this.cvvController,
       addNewCardModelObj: addNewCardModelObj ?? this.addNewCardModelObj,
     );
   }

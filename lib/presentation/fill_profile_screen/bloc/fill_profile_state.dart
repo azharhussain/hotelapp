@@ -5,24 +5,24 @@ part of 'fill_profile_bloc.dart';
 /// Represents the state of FillProfile in the application.
 class FillProfileState extends Equatable {
   FillProfileState({
-    this.fullNameEditTextController,
-    this.nameEditTextController,
-    this.dateOfBirthEditTextController,
-    this.emailEditTextController,
-    this.phoneNumberEditTextController,
+    this.fullNameController,
+    this.nameController,
+    this.dateOfBirthController,
+    this.emailController,
+    this.phoneNumberController,
     this.selectedDropDownValue,
     this.fillProfileModelObj,
   });
 
-  TextEditingController? fullNameEditTextController;
+  TextEditingController? fullNameController;
 
-  TextEditingController? nameEditTextController;
+  TextEditingController? nameController;
 
-  TextEditingController? dateOfBirthEditTextController;
+  TextEditingController? dateOfBirthController;
 
-  TextEditingController? emailEditTextController;
+  TextEditingController? emailController;
 
-  TextEditingController? phoneNumberEditTextController;
+  TextEditingController? phoneNumberController;
 
   SelectionPopupModel? selectedDropDownValue;
 
@@ -30,34 +30,31 @@ class FillProfileState extends Equatable {
 
   @override
   List<Object?> get props => [
-        fullNameEditTextController,
-        nameEditTextController,
-        dateOfBirthEditTextController,
-        emailEditTextController,
-        phoneNumberEditTextController,
+        fullNameController,
+        nameController,
+        dateOfBirthController,
+        emailController,
+        phoneNumberController,
         selectedDropDownValue,
         fillProfileModelObj,
       ];
   FillProfileState copyWith({
-    TextEditingController? fullNameEditTextController,
-    TextEditingController? nameEditTextController,
-    TextEditingController? dateOfBirthEditTextController,
-    TextEditingController? emailEditTextController,
-    TextEditingController? phoneNumberEditTextController,
+    TextEditingController? fullNameController,
+    TextEditingController? nameController,
+    TextEditingController? dateOfBirthController,
+    TextEditingController? emailController,
+    TextEditingController? phoneNumberController,
     SelectionPopupModel? selectedDropDownValue,
     FillProfileModel? fillProfileModelObj,
   }) {
     return FillProfileState(
-      fullNameEditTextController:
-          fullNameEditTextController ?? this.fullNameEditTextController,
-      nameEditTextController:
-          nameEditTextController ?? this.nameEditTextController,
-      dateOfBirthEditTextController:
-          dateOfBirthEditTextController ?? this.dateOfBirthEditTextController,
-      emailEditTextController:
-          emailEditTextController ?? this.emailEditTextController,
-      phoneNumberEditTextController:
-          phoneNumberEditTextController ?? this.phoneNumberEditTextController,
+      fullNameController: fullNameController ?? this.fullNameController,
+      nameController: nameController ?? this.nameController,
+      dateOfBirthController:
+          dateOfBirthController ?? this.dateOfBirthController,
+      emailController: emailController ?? this.emailController,
+      phoneNumberController:
+          phoneNumberController ?? this.phoneNumberController,
       selectedDropDownValue:
           selectedDropDownValue ?? this.selectedDropDownValue,
       fillProfileModelObj: fillProfileModelObj ?? this.fillProfileModelObj,

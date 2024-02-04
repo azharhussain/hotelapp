@@ -64,7 +64,7 @@ class SearchPageTabContainerPageState extends State<SearchPageTabContainerPage>
                 ),
               ),
               SizedBox(height: 24.v),
-              _buildSearchRecommendations(context),
+              _buildSearchRecomendations(context),
               SizedBox(
                 height: 650.v,
                 child: TabBarView(
@@ -84,7 +84,7 @@ class SearchPageTabContainerPageState extends State<SearchPageTabContainerPage>
   }
 
   /// Section Widget
-  Widget _buildSearchRecommendations(BuildContext context) {
+  Widget _buildSearchRecomendations(BuildContext context) {
     return Align(
       alignment: Alignment.centerRight,
       child: Padding(

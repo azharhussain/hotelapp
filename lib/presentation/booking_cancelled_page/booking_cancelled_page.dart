@@ -1,7 +1,7 @@
-import '../booking_cancelled_page/widgets/bookingcancelledlist_item_widget.dart';
+import '../booking_cancelled_page/widgets/bookingcancelled_item_widget.dart';
 import 'bloc/booking_cancelled_bloc.dart';
 import 'models/booking_cancelled_model.dart';
-import 'models/bookingcancelledlist_item_model.dart';
+import 'models/bookingcancelled_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hotelapp/core/app_export.dart';
 
@@ -41,7 +41,7 @@ class BookingCancelledPageState extends State<BookingCancelledPage>
           child: Column(
             children: [
               SizedBox(height: 30.v),
-              _buildBookingCancelledList(context),
+              _buildBookingCancelled(context),
             ],
           ),
         ),
@@ -50,7 +50,7 @@ class BookingCancelledPageState extends State<BookingCancelledPage>
   }
 
   /// Section Widget
-  Widget _buildBookingCancelledList(BuildContext context) {
+  Widget _buildBookingCancelled(BuildContext context) {
     return Expanded(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.h),
@@ -69,14 +69,14 @@ class BookingCancelledPageState extends State<BookingCancelledPage>
                   height: 20.v,
                 );
               },
-              itemCount: bookingCancelledModelObj
-                      ?.bookingcancelledlistItemList.length ??
-                  0,
+              itemCount:
+                  bookingCancelledModelObj?.bookingcancelledItemList.length ??
+                      0,
               itemBuilder: (context, index) {
-                BookingcancelledlistItemModel model = bookingCancelledModelObj
-                        ?.bookingcancelledlistItemList[index] ??
-                    BookingcancelledlistItemModel();
-                return BookingcancelledlistItemWidget(
+                BookingcancelledItemModel model =
+                    bookingCancelledModelObj?.bookingcancelledItemList[index] ??
+                        BookingcancelledItemModel();
+                return BookingcancelledItemWidget(
                   model,
                 );
               },

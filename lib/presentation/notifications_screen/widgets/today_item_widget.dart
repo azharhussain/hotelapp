@@ -1,17 +1,17 @@
-import '../models/sectionlist_item_model.dart';
+import '../models/today_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hotelapp/core/app_export.dart';
 
 // ignore: must_be_immutable
-class SectionlistItemWidget extends StatelessWidget {
-  SectionlistItemWidget(
-    this.sectionlistItemModelObj, {
+class TodayItemWidget extends StatelessWidget {
+  TodayItemWidget(
+    this.todayItemModelObj, {
     Key? key,
   }) : super(
           key: key,
         );
 
-  SectionlistItemModel sectionlistItemModelObj;
+  TodayItemModel todayItemModelObj;
 
   @override
   Widget build(BuildContext context) {

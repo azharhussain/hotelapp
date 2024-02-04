@@ -41,7 +41,7 @@ class SearchTypePageState extends State<SearchTypePage>
           child: Column(
             children: [
               SizedBox(height: 32.v),
-              _buildRecentSearches(context),
+              _buildRecentSerches(context),
             ],
           ),
         ),
@@ -50,7 +50,7 @@ class SearchTypePageState extends State<SearchTypePage>
   }
 
   /// Section Widget
-  Widget _buildRecentSearches(BuildContext context) {
+  Widget _buildRecentSerches(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.h),
       child: Column(

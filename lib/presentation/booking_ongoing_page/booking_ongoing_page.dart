@@ -8,10 +8,10 @@ class BookingOngoingPageState extends State<BookingOngoingPage> with  AutomaticK
 
 @override Widget build(BuildContext context) { mediaQueryData = MediaQuery.of(context); return SafeArea(child: Scaffold(body: Container(width: double.maxFinite, decoration: AppDecoration.fillOnPrimary, child: Column(children: [SizedBox(height: 30.v), _buildBookingOngoing(context)])))); } 
 /// Section Widget
-Widget _buildBookingOngoing(BuildContext context) { return Expanded(child: Padding(padding: EdgeInsets.symmetric(horizontal: 24.h), child: BlocSelector<BookingOngoingBloc, BookingOngoingState, BookingOngoingModel?>(selector: (state) => state.bookingOngoingModelObj, builder: (context, bookingOngoingModelObj) {return ListView.separated(physics: BouncingScrollPhysics(), shrinkWrap: true, separatorBuilder: (context, index) {return SizedBox(height: 20.v);}, itemCount: bookingOngoingModelObj?.bookingongoingItemList.length ?? 0, itemBuilder: (context, index) {BookingongoingItemModel model = bookingOngoingModelObj?.bookingongoingItemList[index] ?? BookingongoingItemModel(); return BookingongoingItemWidget(model, onTapBookingActionCancelBookingButton: () {onTapBookingActionCancelBookingButton(context);}, onTapBookingActionViewTicketButton: () {onTapBookingActionViewTicketButton(context);});});}))); } 
+Widget _buildBookingOngoing(BuildContext context) { return Expanded(child: Padding(padding: EdgeInsets.symmetric(horizontal: 24.h), child: BlocSelector<BookingOngoingBloc, BookingOngoingState, BookingOngoingModel?>(selector: (state) => state.bookingOngoingModelObj, builder: (context, bookingOngoingModelObj) {return ListView.separated(physics: BouncingScrollPhysics(), shrinkWrap: true, separatorBuilder: (context, index) {return SizedBox(height: 20.v);}, itemCount: bookingOngoingModelObj?.bookingongoingItemList.length ?? 0, itemBuilder: (context, index) {BookingongoingItemModel model = bookingOngoingModelObj?.bookingongoingItemList[index] ?? BookingongoingItemModel(); return BookingongoingItemWidget(model, onTapCancelBooking: () {onTapCancelBooking(context);}, onTapViewTicket: () {onTapViewTicket(context);});});}))); } 
 
-onTapBookingActionCancelBookingButton(BuildContext context) { // TODO: implement Actions
+onTapCancelBooking(BuildContext context) { // TODO: implement Actions
  } 
 /// Navigates to the viewTicketScreen when the action is triggered.
-onTapBookingActionViewTicketButton(BuildContext context) { NavigatorService.pushNamed(AppRoutes.viewTicketScreen, ); } 
+onTapViewTicket(BuildContext context) { NavigatorService.pushNamed(AppRoutes.viewTicketScreen, ); } 
  }
